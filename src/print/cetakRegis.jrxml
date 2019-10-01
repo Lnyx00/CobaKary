@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="89081018-f5f9-41c3-9c87-872d8a078ea1">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="5"/>
+	<parameter name="NIK" class="java.lang.String"/>
+	<parameter name="Nama" class="java.lang.String"/>
+	<parameter name="Tempat" class="java.lang.String"/>
+	<parameter name="tglLahir" class="java.lang.String"/>
+	<parameter name="tglPendaftaran" class="java.lang.String"/>
+	<parameter name="JK" class="java.lang.String"/>
+	<parameter name="tglTest" class="java.lang.String"/>
+	<parameter name="comboJabatan" class="java.lang.String"/>
+	<parameter name="fixTanggal" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     datapelamar.`NIK` AS datapelamar_NIK,
+     datapelamar.`Nama` AS datapelamar_Nama,
+     datapelamar.`Tempat` AS datapelamar_Tempat,
+     datapelamar.`tglLahir` AS datapelamar_tglLahir,
+     datapelamar.`JK` AS datapelamar_JK,
+     datapelamar.`Lulusan` AS datapelamar_Lulusan,
+     datapelamar.`Jabatan` AS datapelamar_Jabatan,
+     datapelamar.`Agama` AS datapelamar_Agama,
+     datapelamar.`NoTelp` AS datapelamar_NoTelp,
+     datapelamar.`Alamat` AS datapelamar_Alamat,
+     lap_pen_karyawan.`NIK` AS lap_pen_karyawan_NIK,
+     lap_pen_karyawan.`Nama` AS lap_pen_karyawan_Nama,
+     lap_pen_karyawan.`jenisKelamin` AS lap_pen_karyawan_jenisKelamin,
+     lap_pen_karyawan.`Lulusan` AS lap_pen_karyawan_Lulusan,
+     lap_pen_karyawan.`Jabatan` AS lap_pen_karyawan_Jabatan,
+     lap_pen_karyawan.`tgl_lamar` AS lap_pen_karyawan_tgl_lamar,
+     lap_pen_karyawan.`No_HP` AS lap_pen_karyawan_No_HP,
+     userid.`Username` AS userid_Username,
+     userid.`Password` AS userid_Password
+FROM
+     `datapelamar` datapelamar,
+     `lap_pen_karyawan` lap_pen_karyawan,
+     `userid` userid]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="146" y="0" width="485" height="67" uuid="0e6517ec-58d7-4b60-b53b-3e145bc71e25"/>
+				<textElement textAlignment="Center">
+					<font size="26" isBold="true"/>
+				</textElement>
+				<text><![CDATA[KARTU REGRISTRASI PENERIMAAN KARYAWAN ]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="78" width="802" height="1" uuid="9b06d111-1675-466b-b84e-e843f1834d76"/>
+				<graphicElement>
+					<pen lineWidth="5.0"/>
+				</graphicElement>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<detail>
+		<band height="173" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="216" height="24" uuid="3a096396-6928-43a8-b9ba-d2ecc69b80b4"/>
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NIK]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="24" width="216" height="24" uuid="9c1ae8d9-77de-4919-819a-4a84fb924b4b"/>
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nama]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="48" width="216" height="24" uuid="1d9aafdd-f0a2-47a9-8e35-de7196c57602"/>
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tempat, Tgl Lahir]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="72" width="216" height="24" uuid="88edef13-6587-46af-b1f6-d9df96c7dfad"/>
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Jenis Kelamin]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="96" width="216" height="24" uuid="132f0047-7f39-4f00-9bf3-e78a4bf3a915"/>
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tanggal Pendaftaran]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="216" y="0" width="15" height="24" uuid="802dce22-cd3b-4291-85ba-effb682c7be5"/>
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="216" y="24" width="15" height="24" uuid="b5386a69-4cd9-404b-8312-8832b7fec9b0"/>
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="216" y="48" width="15" height="24" uuid="2adeee26-c08a-46b3-ab65-6c2b71c60342"/>
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="216" y="72" width="15" height="24" uuid="802b705b-af70-4efe-bb9e-f27369276350"/>
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="216" y="96" width="15" height="24" uuid="5102f584-70ba-44eb-89c0-09e824c393cd"/>
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="231" y="0" width="182" height="24" uuid="312e35a4-fd0a-4d2b-a549-badd88567cf6"/>
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{NIK}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="231" y="24" width="182" height="24" uuid="fd369e8f-5307-4060-906a-e594f53d7ed1"/>
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Nama}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="231" y="96" width="182" height="24" uuid="758f1170-ab1a-4f5b-b143-5fe70818d057"/>
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{tglPendaftaran}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="231" y="72" width="182" height="24" uuid="d886233d-c4ea-489d-bfab-2c9d1e17ac5e"/>
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{JK}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="231" y="48" width="121" height="24" uuid="0507c036-fd25-442f-9a18-dc2f7b6bf4be"/>
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Tempat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="367" y="48" width="185" height="24" uuid="02a46c75-19cd-4e0a-898d-9ba5673c2c01"/>
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{tglLahir}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="352" y="48" width="15" height="24" uuid="15b81e72-6cdf-4b96-82aa-626a544fc503"/>
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[,]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="667" y="10" width="124" height="160" uuid="590ecf88-39d6-4d4a-9fd3-054c232efba6"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="679" y="71" width="100" height="20" uuid="aa78a586-c4b4-40af-bc98-242640d016e4"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FOTO 4x 3]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="120" width="216" height="24" uuid="c5f467e7-1b03-4d93-bbf9-e17b91cdf2cc"/>
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Jadwal Test]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="216" y="120" width="15" height="24" uuid="1b4bd1e9-2285-427f-80ef-fd192eea20fc"/>
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="231" y="120" width="182" height="24" uuid="6ea98ff6-6c37-4b64-8af2-c06719e55b7a"/>
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{tglTest}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="144" width="216" height="24" uuid="170593f5-3019-42bf-a5c2-8fc321026361"/>
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Posisi yang di inginkan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="216" y="144" width="15" height="24" uuid="751f46d2-83f8-4625-9dc7-5175b180d84e"/>
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="231" y="144" width="182" height="24" uuid="7cdfad58-17bf-4cc4-9f23-47c91978e81c"/>
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{comboJabatan}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="802" height="23" uuid="003e8606-97e1-4eae-b17b-edd8fb507644"/>
+				<textElement textAlignment="Center">
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Selamat Anda Telah Berhasil Melakukan Regristrasi Pada PT. Indah Logistik]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="23" width="802" height="22" uuid="bea282da-a5d2-4fe7-9068-0bc3fcbcf754"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Mohon untuk membawa bukti regristrasi pada saat melakukan test]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="122" splitType="Stretch">
+			<staticText>
+				<reportElement x="581" y="101" width="116" height="21" uuid="1c20990a-a0e0-4086-bdb7-8296c7915342"/>
+				<textElement textAlignment="Center">
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[Fredi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="581" y="76" width="116" height="25" uuid="af7a2f20-aa76-45f4-8ff5-c44e933a47b3"/>
+				<textElement textAlignment="Center">
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[HRD]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="534" y="0" width="65" height="23" uuid="963f5294-1242-43b1-8ab1-3e983669f372"/>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[Jakarta,]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="599" y="0" width="158" height="23" uuid="69c31ed1-3814-4573-83ea-4578b59966f1"/>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fixTanggal}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

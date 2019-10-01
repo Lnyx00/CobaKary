@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="67f52705-c567-4910-9704-fbbd5e205fb2">
+	<property name="ireport.zoom" value="1.3310000000000008"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Times New Roman" fontSize="50" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#E6DAC3"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="tabel" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     datapelamar.`NIK` AS datapelamar_NIK,
+     datapelamar.`Nama` AS datapelamar_Nama,
+     datapelamar.`Tempat` AS datapelamar_Tempat,
+     datapelamar.`tglLahir` AS datapelamar_tglLahir,
+     datapelamar.`JK` AS datapelamar_JK,
+     datapelamar.`Lulusan` AS datapelamar_Lulusan,
+     datapelamar.`Jabatan` AS datapelamar_Jabatan,
+     datapelamar.`Agama` AS datapelamar_Agama,
+     datapelamar.`NoTelp` AS datapelamar_NoTelp,
+     datapelamar.`Alamat` AS datapelamar_Alamat,
+     datapelamar.`tglTest` AS datapelamar_tglTest,
+     datapelamar_A.`NIK` AS datapelamar_A_NIK,
+     datapelamar_A.`Nama` AS datapelamar_A_Nama,
+     datapelamar_A.`Tempat` AS datapelamar_A_Tempat,
+     datapelamar_A.`tglLahir` AS datapelamar_A_tglLahir,
+     datapelamar_A.`JK` AS datapelamar_A_JK,
+     datapelamar_A.`Lulusan` AS datapelamar_A_Lulusan,
+     datapelamar_A.`Jabatan` AS datapelamar_A_Jabatan,
+     datapelamar_A.`Agama` AS datapelamar_A_Agama,
+     datapelamar_A.`NoTelp` AS datapelamar_A_NoTelp,
+     datapelamar_A.`Alamat` AS datapelamar_A_Alamat,
+     datapelamar_A.`tglTest` AS datapelamar_A_tglTest,
+     userid.`Username` AS userid_Username,
+     userid.`Password` AS userid_Password
+FROM
+     `datapelamar` datapelamar,
+     `datapelamar` datapelamar_A,
+     `userid` userid]]>
+	</queryString>
+	<field name="COLUMN_0" class="java.lang.String"/>
+	<field name="COLUMN_1" class="java.lang.String"/>
+	<field name="COLUMN_2" class="java.lang.String"/>
+	<field name="COLUMN_3" class="java.lang.String"/>
+	<field name="COLUMN_4" class="java.lang.String"/>
+	<field name="COLUMN_5" class="java.lang.String"/>
+	<field name="COLUMN_6" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="136" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="1" y="0" width="801" height="62" uuid="0e63d10c-0111-4715-b1b0-6c1ce4990025"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Laporan Lamaran Kerja]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="42" y="62" width="700" height="74" uuid="f70a2100-0b45-40f4-b636-60139d37670c"/>
+				<textElement textAlignment="Center">
+					<font size="22"/>
+				</textElement>
+				<text><![CDATA[Jl. Tanah Merdeka No.72, RT.9/RW.5, Rambutan, Ciracas, Kota Jakarta Timur, Daerah Khusus Ibukota]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="21" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="101" height="21" uuid="c3e4e3e7-70f7-4a03-b2cf-36b87ca64ea1"/>
+				<text><![CDATA[NIK]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="101" y="0" width="100" height="21" uuid="c6e341b8-a570-42dc-adf0-52785d21c8f2"/>
+				<text><![CDATA[Nama]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="201" y="0" width="100" height="21" uuid="3112d412-0e65-4c78-b436-34adb58e0108"/>
+				<text><![CDATA[JK]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="301" y="0" width="100" height="21" uuid="88b30c0e-57f1-4cc5-80e4-f5e539f46b0c"/>
+				<text><![CDATA[Lulusan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="401" y="0" width="100" height="21" uuid="cd07e19f-8018-4ffb-b3be-7de1e0e099fb"/>
+				<text><![CDATA[Jabatan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="501" y="0" width="100" height="21" uuid="7ce0650c-b271-4f01-b991-c7c319ffedbb"/>
+				<text><![CDATA[Tgl Lamar]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="601" y="0" width="100" height="21" uuid="63e31382-b873-407e-9e47-a4125d8d8b4a"/>
+				<text><![CDATA[No HP]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="701" y="0" width="100" height="21" uuid="7b8f1cbd-bc2e-4dfd-a283-fe3b0811f827"/>
+				<text><![CDATA[Tgl Test]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="25" splitType="Stretch">
+			<textField>
+				<reportElement x="1" y="0" width="100" height="20" uuid="968ba1dc-4f85-498b-b30f-bb185764964e"/>
+				<textFieldExpression><![CDATA[$F{COLUMN_0}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="101" y="0" width="100" height="20" uuid="5e7ab115-9298-4708-9a94-539527897d27"/>
+				<textFieldExpression><![CDATA[$F{COLUMN_1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="201" y="0" width="100" height="20" uuid="24e4ba3a-88db-485b-9f71-95ebcfaa6414"/>
+				<textFieldExpression><![CDATA[$F{COLUMN_2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="301" y="0" width="100" height="20" uuid="761c49d6-6a57-4bc8-8935-40581b2b8cdc"/>
+				<textFieldExpression><![CDATA[$F{COLUMN_3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="401" y="0" width="100" height="20" uuid="e4f6e7cc-287a-41a1-beb6-3a1e425900bd"/>
+				<textFieldExpression><![CDATA[$F{COLUMN_4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="501" y="0" width="100" height="20" uuid="d36e60ae-3d74-4cc6-b7c5-127b05307fdb"/>
+				<textFieldExpression><![CDATA[$F{COLUMN_5}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="601" y="0" width="100" height="20" uuid="9a9d4984-2d2a-49d2-bf3f-78f42cfb5e9b"/>
+				<textFieldExpression><![CDATA[$F{COLUMN_6}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="6" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="802" height="1" uuid="a4182b1c-9086-4969-a7e0-b138cef004d2"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

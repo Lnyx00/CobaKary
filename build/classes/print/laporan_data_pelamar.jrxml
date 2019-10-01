@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="057992f6-c77c-4b72-8079-8da3b5cdf2c7">
+	<property name="ireport.zoom" value="1.6105100000000014"/>
+	<property name="ireport.x" value="88"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Times New Roman" fontSize="50" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#E6DAC3"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="tabel" class="java.lang.String"/>
+	<parameter name="tgl" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     datapelamar.`NIK` AS datapelamar_NIK,
+     datapelamar.`Nama` AS datapelamar_Nama,
+     datapelamar.`Tempat` AS datapelamar_Tempat,
+     datapelamar.`tglLahir` AS datapelamar_tglLahir,
+     datapelamar.`JK` AS datapelamar_JK,
+     datapelamar.`Lulusan` AS datapelamar_Lulusan,
+     datapelamar.`Jabatan` AS datapelamar_Jabatan,
+     datapelamar.`Agama` AS datapelamar_Agama,
+     datapelamar.`NoTelp` AS datapelamar_NoTelp,
+     datapelamar.`Alamat` AS datapelamar_Alamat,
+     datapelamar.`tglTest` AS datapelamar_tglTest
+FROM
+     `datapelamar` datapelamar]]>
+	</queryString>
+	<field name="COLUMN_0" class="java.lang.String"/>
+	<field name="COLUMN_1" class="java.lang.String"/>
+	<field name="COLUMN_2" class="java.lang.String"/>
+	<field name="COLUMN_3" class="java.lang.String"/>
+	<field name="COLUMN_4" class="java.lang.String"/>
+	<field name="COLUMN_5" class="java.lang.String"/>
+	<field name="COLUMN_6" class="java.lang.String"/>
+	<field name="COLUMN_7" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="136" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="172" y="0" width="630" height="62" uuid="13f313fc-d498-4709-8720-30ec08c3693f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[PT. Indah Logistik]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="172" y="62" width="630" height="22" uuid="80f4a49c-6893-4ea0-9ecf-49031d53d73b"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Laporan Data Pelamar]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="172" y="84" width="630" height="42" uuid="b808adf6-3554-4057-a19d-f88f66181e83"/>
+				<textElement textAlignment="Center">
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[Jl. Supriyadi, TB. Simatupang, No. 7A, Pasar Rebo]]></text>
+			</staticText>
+			<image>
+				<reportElement x="2" y="0" width="170" height="136" uuid="696795b5-a337-4e84-a5f0-9711df2cd250"/>
+				<imageExpression><![CDATA[new javax.swing.ImageIcon(getClass().getResource("print/coffee.jpg")).getImage()]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="29" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="28" width="802" height="1" uuid="0edb8732-27a3-4f0c-ac4d-a74169eb7d05"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="1" y="0" width="101" height="16" uuid="fd98592c-7056-45f0-bbb3-1f0b40c0c0c5"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[NIK]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="258" y="0" width="72" height="16" uuid="20efb76b-391c-4ff6-a6f9-d38a054db7f2"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[JK]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="330" y="0" width="100" height="16" uuid="9d0237df-fd8c-4080-825b-e350b94d59af"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Lulusan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="430" y="0" width="100" height="16" uuid="6e8cf28a-ff1b-4a61-9933-b33747ff71c0"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Jabatan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="630" y="0" width="72" height="16" uuid="a21eab24-346e-42f0-b519-280d16362ae7"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[No HP]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="702" y="0" width="100" height="16" uuid="e3d143df-5e9b-4b2d-a670-efe115710bb3"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Tgl Test]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="530" y="0" width="100" height="16" uuid="6bc9421c-fd2e-49e6-a983-acd8e96c18da"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Tgl Lamar]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="102" y="0" width="156" height="16" uuid="e46646c2-a214-450f-922b-0704faf84c9d"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Nama]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="27" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="802" height="15" uuid="0510226c-5a60-4954-8980-6caa2c5f236f"/>
+				<textField>
+					<reportElement x="102" y="0" width="156" height="15" uuid="6339374c-3478-44f2-be41-a6e59a674b13"/>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{COLUMN_1}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="428" y="0" width="100" height="15" uuid="313af0a4-7aed-4f7e-806d-288ad46e5d7e"/>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{COLUMN_4}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="630" y="0" width="73" height="15" uuid="68bb3e5c-d377-47b1-a8b1-c46918445b94"/>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{COLUMN_6}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="1" y="0" width="101" height="15" uuid="6fd9c830-e77c-4ba0-8ac5-5e1a60245888"/>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{COLUMN_0}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="258" y="0" width="72" height="14" uuid="33ab6ff2-1abd-4e4b-bfb6-dec004ad47f2"/>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{COLUMN_2}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="330" y="0" width="100" height="14" uuid="f89f7695-5b12-432c-912d-c213b43ab38f"/>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{COLUMN_3}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="703" y="1" width="99" height="13" uuid="6efdd3f8-7656-4f3f-a58c-35f0eb0d3250"/>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{COLUMN_7}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="528" y="0" width="102" height="15" uuid="a6f51bbb-f75b-4320-b99d-e4d0ea343fc0"/>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{COLUMN_5}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="132" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="802" height="1" uuid="80d22251-88f0-49b8-9817-80606db79b54"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="584" y="77" width="116" height="25" uuid="be81133e-9609-4af9-8c7c-1e6a2e96bf35"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[HRD]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="537" y="4" width="65" height="20" uuid="a48ee398-f4ab-4697-9db9-719d5e89f6bb"/>
+				<textElement>
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Jakarta,]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="602" y="4" width="111" height="20" uuid="b25ccbc1-0d60-4eb4-a5a2-e17fd22e26ff"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{tgl}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="584" y="102" width="116" height="21" uuid="e02a0d55-30bd-4592-8060-89ec47207dda"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Fredi]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
